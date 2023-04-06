@@ -19,12 +19,13 @@ namespace Sudoku
 
       var filePath = args[0];
 */
-
-      var filePath = @"..\..\..\Data\sudoku.txt";
-
+      var slash = Path.DirectorySeparatorChar;
+      
+      var filePath = $"..{slash}..{slash}..{slash}Data{slash}sudoku.txt";
+      
       if (!File.Exists(filePath))
       {
-        Console.WriteLine("File doesn't exist");
+        Console.WriteLine("File doesn't exist: {0}", Path.GetFullPath(filePath));
         return;
       }
 
